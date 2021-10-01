@@ -20,6 +20,8 @@ transform csv data to shapeflie data
 
 use a GUI to process the bridge data
 
+AHP method to evaluate the importance
+
 
 ### what I need to learn
 
@@ -33,7 +35,14 @@ use a GUI to process the bridge data
 ### 2.1 Pre-process the data
 Compared with general data, GIS data combines the attributes and coordinate information of elements. One common type of GIS data is 'Vector Data'. It uses X, Y, and Z coordinates to represent map graphics (etc. river and lake) or geographic entity locations(etc. houses and bridges).
 
-The preliminary data contains some useless information such as ... and sometimes the data may have different data types. Thus, before we process the data, we need to use an uniform data type to store the data.
+This project will contain two data sets, a data set showing a map of Pittsburgh and a data set showing Pittsburgh Bridges. The preliminary date set of Pittsburgh Bridges contains some useless information such as... , and the two date sets have different data fomrats. Thus, before we process the data, we need to use an uniform data type to clear and store the data.
+
+### 2.2 Geopandas
+Geopandas is an open-source project to help process the geographic data[2]. Geopandas provides excellent read and write support for shapefiles. It allows users direct manipulation of geometry data, making it easier to manipulate geographic data in Python.
+
+Geopandas has an unique data sturcture called geopandas.GeoDataFrame, a subclass of pandas.DataFrame. A DataFrame is a tabular data structure that contains an ordered set of columns.It has both row and column indexes, and can be thought of as a dictionary of Series( an unique column in pandas) with a common index. GeoDataFrame can store geometry columns and perform spatial operations.
+
+Therefore, your GeoDataFrame is a combination of Series with your data (numerical, boolean, text etc.) and GeoSeries with geometries (points, polygons etc.). You can have as many columns with geometries as you wish, there’s no limit typical for desktop GIS software.
 
 ### 2.2 Compute something using the data
 Algorithm
@@ -51,3 +60,9 @@ what you plan to deliver in your final report
 
 ## 3. Program Design
 Show your preliminary design by creating a flow chart of the major modules with the corresponding data and logic flow.  You can generate this by hand or use one of the many charting applications that are available.
+
+
+## Reference
+[1] https://infobridge.fhwa.dot.gov/Page/infobridge_documentation
+
+[2] https://geopandas.org/about.html
